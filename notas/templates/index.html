@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+{% block content %}
+
+
+<div class="notas-header">
+    <h3>Notas publicas</h3>
+    <h4><a href="{% url 'create-note' %}" class="crear-link">Write a note</a></h4>
+    
+</div>
+
+
+{% if notas %}
+<ul class="notas-container">
+{% for nota in notas %}
+    <li class="nota-li"><a href="{{ nota.get_absolute_url }}" class="link-nota">{{ nota.titulo }}</a></li>
+{% endfor %}
+</ul>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,151 @@
+*, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+h1, h3, h4 {
+  overflow: hidden;
+}
+
+header {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 45px;
+  z-index: 4;
+  box-shadow: #111 10px 10px 10px;
+}
+header nav.about-barras {
+  position: absolute;
+  right: 0.5rem;
+  cursor: pointer;
+}
+header nav.about-barras img.barras {
+  height: 20px;
+}
+header nav.about-barras .hide {
+  display: none;
+}
+
+main.notas-container {
+  padding: 1rem;
+  margin-top: 45px;
+}
+main.notas-container h4.no-log {
+  color: #555;
+}
+main.notas-container div.notas-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+main.notas-container ul.notas-container li {
+  list-style: none;
+  display: flex;
+  margin-bottom: 0.2rem;
+}
+main.notas-container ul.notas-container li a {
+  text-decoration: none;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  padding-left: 0.6rem;
+  display: flex;
+  flex-grow: 1;
+  color: #111;
+  background-color: #efefef;
+  font-size: 1.09rem;
+  font-weight: 700;
+  border-radius: 17px;
+  border-top-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+main.notas-container ul.notas-container li a:hover {
+  background-color: #248df5ab;
+}
+main.notas-container article.nota-detail h2.nota-titulo {
+  color: black;
+  font-size: 2rem;
+}
+main.notas-container article.nota-detail div.nota-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main.notas-container article.nota-detail div.nota-detail-header a.borrar-link {
+  min-width: 60px;
+  text-align: end;
+}
+main.notas-container article.nota-detail h5.date-published {
+  color: #666;
+}
+main.notas-container article.nota-detail div.nota-texto-container {
+  min-height: 100%;
+}
+main.notas-container article.nota-detail div.nota-texto-container p.nota-texto {
+  font-size: 1.05rem;
+  color: #333;
+  margin-top: 1rem;
+}
+
+.login-link, .crear-link, .borrar-link, .atras-link, .logout-link, .portafolio-link, .mis-notas-link {
+  text-decoration: none;
+  color: #248bf5;
+}
+
+.crear-link, .borrar-link {
+  text-decoration: underline;
+}
+
+.notas-link {
+  color: black;
+  text-decoration: none;
+}
+
+section.extra {
+  height: 100vh;
+  width: 100vw;
+  max-width: 100%;
+  background-color: white;
+  position: fixed;
+  padding: 0.5rem 1rem;
+  top: 45px;
+  z-index: 2;
+  left: 100vw;
+  transition: 0.5s ease-in;
+}
+section.extra > a {
+  display: block;
+}
+section.extra p.personal {
+  margin-top: 2rem;
+}
+
+section.extra.initial-pos {
+  left: 0px;
+}
+
+@media only screen and (min-width: 650px) {
+  div.iniciar-sesion {
+    position: absolute;
+    right: 60px;
+    padding: 5px 13px;
+    background: blue;
+    color: white;
+  }
+  div.iniciar-sesion a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,38 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<article class="nota-detail">
+    <nav class="navigation-links">
+        <a href="{% url 'index' %}" class="atras-link">Atras</a>
+    </nav>
+    <div class="nota-detail-header">
+        <h2 class="nota-titulo">{{ nota.titulo }}</h2>
+        {% if user.is_authenticate and nota.usuario == user.get_username %}
+        <a href="{% url 'nota-delete' nota.id %}" class="borrar-link">Borrar</a>
+        {% endif %}
+    </div>
+
+    {% if user.is_authenticated and nota.usuario != None and nota.usuario != user.get_username %}
+    <h4>Creado por {{ nota.usuario }}</h4>
+
+    {% endif %}
+
+    {% if request.user == nota.usuario and user.is_authenticated %}
+    <a href="{% url 'nota-update' nota.pk %}">Editar</a>
+
+    {% endif %}
+    
+    <h5 class="date-published">Posted: {{ nota.fecha }}</h5>
+    <hr>
+
+
+
+    <div class="nota-texto-container">
+        <p class="nota-texto">{{ nota.texto }}</p>
+    </div>
+
+</article>
+
+
+{% endblock %}

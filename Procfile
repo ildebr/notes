@@ -1,0 +1,1 @@
+web: gunicorn misnotas.wsgi --log-file -
