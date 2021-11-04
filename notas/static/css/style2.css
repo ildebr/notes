@@ -19,26 +19,6 @@ body * {
   font-family: "Roboto", sans-serif;
 }
 
-input[type=submit] {
-  width: 100%;
-  padding: 0.5rem;
-  text-transform: capitalize;
-  color: white;
-  font-weight: bold;
-  border: none;
-  font-size: 1.1rem;
-  text-shadow: none;
-  background: #248bf5;
-}
-
-label {
-  line-height: 2.5;
-}
-
-input {
-  padding: 0.25rem;
-}
-
 header {
   position: fixed;
   display: flex;
@@ -74,7 +54,6 @@ main.notas-container {
 }
 main.notas-container h4.no-log {
   color: #555;
-  margin: 1rem 0;
 }
 main.notas-container div.notas-header {
   display: flex;

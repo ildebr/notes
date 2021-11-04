@@ -64,7 +64,7 @@ def register(request):
         if f.is_valid():
             f.save()
             messages.success(request,'account created')
-            return HttpResponseRedirect(reverse('index'))
+            return HttpResponseRedirect(reverse('login'))
     else:
         f = UserCreationForm()
     return render(request,'auth/register.html', {'form': f})
