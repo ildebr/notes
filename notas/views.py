@@ -5,12 +5,12 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth.models import User
+
 from django.urls import reverse_lazy
 from django.contrib import admin, messages
 from django.http import HttpResponseRedirect
-from .forms import NotaUsuarioForm
+from .forms import NotaUsuarioForm, NewUserForm, UserLoginForm
 from django.urls import reverse
-from django.contrib.auth.forms import UserCreationForm
 # Create your views here.
 
 def index(request):
@@ -60,14 +60,32 @@ class NotesListView(generic.ListView,LoginRequiredMixin):
 
 def register(request):
     if request.method == 'POST':
-        f = UserCreationForm(request.POST)
+        f = NewUserForm(request.POST)
         if f.is_valid():
             f.save()
             messages.success(request,'account created')
             return HttpResponseRedirect(reverse('login'))
     else:
-        f = UserCreationForm()
+        f = NewUserForm()
     return render(request,'auth/register.html', {'form': f})
+
+
+def login(request):
+    if request.method == 'POST':
+        f = UserLoginForm(request.POST)
+        if f.is_valid():
+            f.save()
+            messages.success(request,'Login Successful')
+            return HttpResponseRedirect(reverse('index'))
+    else:
+        f = UserLoginForm()
+    return render(request,'auth/login.html', {'form': f})
+
+# def login(request):
+#     if request.method == "POST":
+#         f = UserLoginForm(request.POST)
+#         if f.is_valid():
+            
 
 def UsuarioNota(request):
     form = NotaUsuarioForm(request.POST or None, request.FILES or None)
@@ -87,6 +105,10 @@ def UsuarioNota(request):
             obj.save()
             form = NotaUsuarioForm()
             messages.success(request, "successsfully")
+
+            if request.user.is_authenticated:
+                return HttpResponseRedirect(reverse('mis-notas'))
             return HttpResponseRedirect(reverse('index'))
 
     return render(request, 'notas/form.html', {'form':form})
+

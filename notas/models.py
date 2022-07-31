@@ -5,7 +5,7 @@ from datetime import date
 # Create your models here.
 
 class Nota(models.Model):
-    titulo = models.CharField(max_length=30)
+    titulo = models.CharField(max_length=100)
     texto = models.TextField(max_length=1000,help_text="Texto de la nota")
     fecha = models.DateField(auto_now=True)
     usuario = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)

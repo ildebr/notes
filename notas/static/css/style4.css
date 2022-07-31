@@ -1,0 +1,242 @@
+*, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  color: white;
+}
+
+body {
+  background-color: #252525;
+}
+
+.main-container {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+h1, h3, h4 {
+  overflow: hidden;
+}
+
+body * {
+  font-family: "Roboto", sans-serif;
+}
+
+header.pagina-logo {
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 45px;
+  z-index: 4;
+  box-shadow: #111 0px -2px 8px;
+  background-color: black;
+}
+header.pagina-logo h1 a {
+  font-family: sans-serif;
+}
+header.pagina-logo nav.about-barras {
+  position: absolute;
+  right: 0.5rem;
+  cursor: pointer;
+}
+header.pagina-logo nav.about-barras img.barras {
+  height: 20px;
+}
+header.pagina-logo nav.about-barras .hide {
+  display: none;
+}
+
+section.extra {
+  height: 100vh;
+  width: 100vw;
+  max-width: 100%;
+  background-color: white;
+  position: fixed;
+  padding: 0.5rem 1rem;
+  top: 45px;
+  z-index: 2;
+  left: 100vw;
+  transition: 0.5s ease-in;
+}
+section.extra > a {
+  display: block;
+}
+section.extra p.personal {
+  margin-top: 2rem;
+}
+
+section.extra.initial-pos {
+  left: 0px;
+}
+
+li:nth-child(1) {
+  background-color: #7c92aa;
+}
+
+li:nth-child(2) {
+  background-color: #58d0f4;
+}
+
+li:nth-child(3) {
+  background-color: #b0871b;
+}
+
+li:nth-child(4) {
+  background-color: #79fad6;
+}
+
+li:nth-child(5) {
+  background-color: #97b8d5;
+}
+
+li:nth-child(6) {
+  background-color: #ba4c10;
+}
+
+li:nth-child(7) {
+  background-color: #947798;
+}
+
+li:nth-child(8) {
+  background-color: #129397;
+}
+
+li:nth-child(9) {
+  background-color: #918a4f;
+}
+
+li:nth-child(10) {
+  background-color: #8ff08a;
+}
+
+li:nth-child(11) {
+  background-color: #3e6740;
+}
+
+li:nth-child(12) {
+  background-color: #d1629a;
+}
+
+li:nth-child(13) {
+  background-color: #caa458;
+}
+
+li:nth-child(14) {
+  background-color: #e88091;
+}
+
+li:nth-child(15) {
+  background-color: #510e4e;
+}
+
+main {
+  padding: 1rem;
+}
+
+.notas-container {
+  margin: 1rem 0;
+}
+.notas-container .nota-li {
+  border-radius: 7px;
+  padding: 0.75rem;
+  width: 47%;
+  margin-bottom: 10px;
+  color: black;
+}
+.notas-container .nota-li a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+.notas-container .nota-li a h2 {
+  color: black;
+}
+.notas-container .nota-li a p {
+  text-align: right;
+  margin-top: 0.75rem;
+  color: #373c3e;
+}
+
+@media (min-width: 700px) {
+  .notas-container .nota-li {
+    width: 30%;
+  }
+  .notas-container .nota-li a p {
+    font-size: 1.4rem;
+  }
+}
+div.add-note {
+  background: white;
+  width: fit-content;
+  padding: 0.75rem;
+  border-radius: 41px;
+  position: fixed;
+  bottom: 2rem;
+  right: 3rem;
+}
+div.add-note img {
+  height: 35px;
+}
+
+.nota-detail .nota-detail-header {
+  margin: 1rem 0;
+}
+.nota-detail .date-published {
+  color: #cfcfcf;
+}
+.nota-detail .nota-texto-container {
+  padding: 1rem 0;
+}
+
+section.extra * {
+  color: black;
+}
+
+.helptext {
+  display: none;
+}
+
+section.register-section input {
+  color: black;
+  padding: 0.25rem;
+  width: 100%;
+}
+section.register-section .register-header {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid white;
+  margin-bottom: 1rem;
+}
+section.register-section .register-header h2 {
+  margin-bottom: 0.5rem;
+}
+section.register-section form {
+  max-width: 300px;
+  margin: 0 auto;
+}
+section.register-section form p {
+  margin-bottom: 1rem;
+}
+section.register-section form p label {
+  display: block;
+  margin-bottom: 0.25rem;
+  position: relative;
+}
+section.register-section form .signup-button {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style4.css.map */
