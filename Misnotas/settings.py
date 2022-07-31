@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'nr_&q3+ga*h))461vw4g!ip@r%1h3%(vix1w!n&3&p2lfrt3mx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['ild-notes.herokuapp.com/', 'ild-notes.com', '127.0.0.1']
 
