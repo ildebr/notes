@@ -9,40 +9,30 @@
     padding: 0;
     box-sizing: border-box;
     position: relative;
+    color: white;
   }
 
-h1,h3,h4{
+body{
+    background-color: #252525;
+}
+
+.main-container{
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+h1, h3, h4 {
     overflow: hidden;
-}
-
-body *{
+  }
+  
+  body * {
     font-family: "Roboto", sans-serif;
-}
+  }
 
-input[type="submit"]{
-    width: 100%;
-    padding: 0.5rem;
-    text-transform: capitalize;
-    color: white;
-    font-weight: bold;
-    border: none;
-    font-size: 1.1rem;
-    text-shadow: none;
-    background: #248bf5;
-}
-
-label{
-    line-height: 2.5;
-}
-
-input{
-    padding: .25rem;
-}
-
-
-header{
+  
+header.pagina-logo{
     //background-color: #248bf5;
-    position: fixed;
+    position: sticky;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -50,7 +40,7 @@ header{
     height: 45px;
     z-index: 4;
     box-shadow: #111 0px -2px 8px;
-    background-color: white;
+    background-color: black;
 
     h1{
 
@@ -75,100 +65,6 @@ header{
     }
 }
 
-main.notas-container{
-    padding: 1rem;
-    margin-top: 45px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-
-    h4.no-log{
-        color: #555;
-        margin: 1rem 0;
-    }
-
-    div.notas-header{
-        display: flex;
-        justify-content: space-between;
-        margin: 1rem 0;
-    }
-
-    ul.notas-container{
-
-        li{
-            list-style: none;
-            display: flex;
-            margin-bottom: 0.2rem;
-
-            a{
-                text-decoration: none;
-                padding-top: 0.6rem;
-                padding-bottom: 0.6rem;
-                padding-left: 0.6rem;
-                display: flex;
-                flex-grow: 1;
-                color: #111;
-                background-color: #efefef;
-                font-size: 1.09rem;
-                font-weight: 700;
-                border-radius: 17px;
-                border-top-left-radius: 0px;
-                border-bottom-right-radius: 0px;
-
-                &:hover{
-                    background-color: #248df5ab;
-                }
-            }
-        }
-    }
-
-    article.nota-detail{
-        h2.nota-titulo{
-            color: black;
-            font-size: 2rem;
-
-        }
-
-        div.nota-detail-header{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            a.borrar-link{
-                min-width: 60px;
-                text-align: end;
-            }
-        }
-
-        h5.date-published{
-            color: #666;
-        }
-
-        div.nota-texto-container{
-
-            min-height: 100%;
-            p.nota-texto{
-                font-size: 1.05rem;
-                color: #333;
-                margin-top: 1rem;
-            }
-        }
-    }
-}
-
-
-.login-link, .crear-link, .borrar-link, .atras-link, .logout-link, .portafolio-link, .mis-notas-link{
-    text-decoration: none;
-    color: #248bf5;
-}
-
-.crear-link, .borrar-link{
-    text-decoration: underline;
-}
-
-.notas-link{
-    color: black;
-    text-decoration: none;
-}
 
 section.extra{
     height: 100vh;
@@ -195,22 +91,145 @@ section.extra.initial-pos{
     left: 0px;
 }
 
-div.iniciar-sesion{
+@mixin random-bgr(){
+    background: rgb(random(255), random(255), random(255));
+}
+
+$count: 15;
+
+@for $i from 1 through $count {
+    li{
+        &:nth-child(#{$i}){
+            background-color: rgb(random(255), random(255), random(255));
+        }
+    }
+}
+
+main{
+    padding: 1rem;
+}
+
+
+.notas-container{
+    // display: grid;
+    // grid-template-columns: 1fr 1fr;
+    // gap: 0.5rem;
+
+    margin: 1rem 0;
+
+    .nota-li{
+        border-radius: 7px;
+        padding: 0.75rem;
+        width: 47%;
+        margin-bottom: 10px;
+        color: black;
+
+        a{
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 800;
+            h2{
+                color: black;
+            }
+
+            p{
+                text-align: right;
+                margin-top: .75rem;
+                color: #373c3e;
+            }
+        }
+    }
+}
+
+@media(min-width: 700px){
+    .notas-container{
+        .nota-li{
+            width: 30%;
+            a{
+                p{
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
+}
+
+
+div.add-note{
+    background: white;
+    width: fit-content;
+    padding: 0.75rem;
+    border-radius: 41px;
+    position: fixed;
+    bottom: 2rem;
+    right: 3rem;
+
+    img{
+        height: 35px;
+    }
+}
+
+
+.nota-detail{
+    .nota-detail-header{
+        margin: 1rem 0;
+    }
+
+    .date-published{
+        color: #cfcfcf;
+    }
+
+    .nota-texto-container{
+        padding: 1rem 0;
+    }
+}
+
+section.extra *{
+    color: black;
+}
+
+.helptext{
     display: none;
 }
 
-@media only screen and (min-width:650px){
-    div.iniciar-sesion{
-        display: block;
-      position: absolute;
-      right: 60px;
-      padding: 5px 13px;
-      background: blue;
-      color: white;
-  
-      a{
-        color: white;
-      text-decoration: none;
-      }
+section.register-section{
+    input{
+        color: black;
+        padding: .25rem;
+        width: 100%;
     }
-  }
+
+    .register-header{
+
+        padding-bottom: 1rem;
+        border-bottom: 1px solid white;
+        margin-bottom: 1rem;
+        h2{
+            margin-bottom: .5rem;
+        }
+
+    }
+    form{
+        max-width: 300px;
+        margin: 0 auto;
+
+        p{
+            margin-bottom: 1rem;
+            label{
+                display: block;
+                margin-bottom: .25rem;
+
+                position: relative;
+            }
+        }
+
+        .signup-button{
+            background-color: black;
+            border: none;
+            color: white;
+            padding: .75rem;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    }
+}

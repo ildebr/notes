@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
-
+from django.contrib.auth import views as v
+from .forms import UserLoginForm
 urlpatterns = [
     path('', views.index, name='index'),
     path('nota/<int:pk>', views.NotaDetailView.as_view(), name='nota-detail'),
@@ -9,5 +10,6 @@ urlpatterns = [
     path('nota/<int:pk>/delete/', views.NotaDelete.as_view(), name='nota-delete'),
     path('notausuario', views.UsuarioNota, name='create-note'),
     path('register', views.register, name='register'),
+    path('login', v.LoginView.as_view(template_name='auth/login.html', authentication_form=UserLoginForm), name='login-c'),
     path('misnotas', views.UserNotes, name='mis-notas'),
 ]

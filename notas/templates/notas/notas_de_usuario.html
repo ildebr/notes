@@ -2,6 +2,12 @@
 
 {% block content %}
 
+<div class="notas-header">
+    <h3>Mis notas</h3>
+    <h4><a href="{% url 'create-note' %}" class="crear-link">Write a note</a></h4>
+    
+</div>
+
 {% if notas %}
 <ul class="notas-container">
     {% for nota in notas %}

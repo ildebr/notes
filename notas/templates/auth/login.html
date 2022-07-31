@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<section class="register-section">
+    <header class="register-header">
+      <h2>Log In</h2>
+    </header>
+    <form action="" method="post">
+      {% csrf_token %}
+      <table>
+      {{ form.as_p }}
+      </table>
+      <input type="submit" value="Sign up" class="signup-button" >
+    </form>
+  </section>
+  
+{% endblock %}

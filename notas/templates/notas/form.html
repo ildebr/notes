@@ -1,7 +1,13 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-<p>usuario {{ request.user }}</p>
+
+
+{% if not request.user.is_anonymous %}
+<p>usuario:  {{ request.user }}</p>
+{% else %}
+<p></p>
+{% endif %}
 <form action="" method="post">
     {% csrf_token %}
     <table>
@@ -9,4 +15,6 @@
     </table>
     <input type="submit" value="Submit">
   </form>
+
+
 {% endblock %}

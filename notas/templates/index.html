@@ -3,17 +3,29 @@
 
 
 <div class="notas-header">
-    <h3>Notas publicas</h3>
+    <h3>This is a list of public notes published by users. To save and keep private notes log in.</h3>
     <h4><a href="{% url 'create-note' %}" class="crear-link">Write a note</a></h4>
     
 </div>
 
 
 {% if notas %}
-<ul class="notas-container">
+<ul class="notas-container" >
 {% for nota in notas %}
-    <li class="nota-li"><a href="{{ nota.get_absolute_url }}" class="link-nota">{{ nota.titulo }}</a></li>
+    <li class="nota-li" >
+        <a href="{{ nota.get_absolute_url }}" class="link-nota">
+            <h2>{{ nota.titulo }}</h2>
+            <p>{{ nota.fecha }}</p>
+        </a>
+    </li>
 {% endfor %}
 </ul>
 {% endif %}
+
+<div class="add-note">
+    <a href="{% url 'create-note' %}">
+        {% load static %}
+        <img src="{% static 'img/note-add.svg' %}" alt="">
+    </a>
+</div>
 {% endblock %}
