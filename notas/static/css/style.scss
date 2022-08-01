@@ -16,6 +16,10 @@ body{
     background-color: #252525;
 }
 
+.no-log{
+    text-align: center;
+}
+
 .main-container{
     max-width: 920px;
     margin: 0 auto;
@@ -54,9 +58,13 @@ header.pagina-logo{
         position: absolute;
         right: 0.5rem;
         cursor: pointer;
-
+        height: 100%;
+        padding: 0 .5rem;
+        display: flex;
+        align-items: center;
         img.barras{
             height: 20px;
+            filter: invert(1);
         }
 
         .hide{
@@ -75,8 +83,29 @@ section.extra{
     padding: 0.5rem 1rem;
     top: 45px;
     z-index: 2;
-    left: 100vw;
-    transition: .5s ease-in;
+    right: 100vw;
+
+    .extra-links{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 3rem;
+
+        a{
+            
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        > *{
+            margin-bottom: 1rem;
+        }
+
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
 
     >a{
         display: block;
@@ -88,7 +117,23 @@ section.extra{
 }
 
 section.extra.initial-pos{
-    left: 0px;
+    right: 0px;
+}
+
+@media (min-width:650px){
+    section.extra{
+        height: fit-content;
+        width: fit-content;
+        width: 200px;
+
+        p.personal{
+            display: none;
+        }
+    }
+
+    section.extra.initial-pos{
+        right: 0;
+    }
 }
 
 @mixin random-bgr(){
@@ -193,11 +238,7 @@ section.extra *{
 }
 
 section.register-section{
-    input{
-        color: black;
-        padding: .25rem;
-        width: 100%;
-    }
+    
 
     .register-header{
 
@@ -223,13 +264,41 @@ section.register-section{
             }
         }
 
-        .signup-button{
-            background-color: black;
-            border: none;
-            color: white;
-            padding: .75rem;
-            border-radius: 10px;
-            cursor: pointer;
+        
+    }
+}
+
+input{
+    color: black;
+    padding: .25rem;
+    width: 100%;
+}
+
+input.signup-button, input.submit-note-button{
+    background-color: black;
+    border: none;
+    color: white;
+    padding: .75rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.nota-section{
+    .form-nota-section{
+        form{
+            
+            max-width: 420px;
+            margin: 0 auto;
+            margin-top: 3rem;
+        }
+        .input-field{
+            color: black;
+            width: 100%;
+            padding: 0.5rem;
+        }
+
+        label{
+            display: none;
         }
     }
 }

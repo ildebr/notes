@@ -10,6 +10,10 @@ class NotaUsuarioForm(forms.ModelForm):
             "titulo",
             "texto"
         ]
+    def __init__(self, *args, **kwargs):
+        super(NotaUsuarioForm, self).__init__(*args, **kwargs)
+        self.fields['titulo'].widget.attrs.update({'class': 'input-field note-title', 'placeholder': 'Titulo'})
+        self.fields['texto'].widget.attrs.update({'class': 'input-field note-text', 'placeholder': 'Contenido'})
 
 class NewUserForm(UserCreationForm):
     email = forms.EmailField(required=True)

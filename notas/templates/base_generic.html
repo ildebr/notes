@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Add additional CSS in static file -->
   {% load static %}
-  <link rel="stylesheet" href="{% static 'css/style4.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
   {% load static %}
   <script src="{% static 'js/jquery.js' %}"></script>
@@ -20,12 +20,6 @@
     
     <!--<img src="{% static 'img/barras.svg' %}" alt="" class="barras">-->
 
-    {% if not user.is_authenticated %}
-    <div class="iniciar-sesion">
-      <a href="{% url 'login-c' %}"><h4>Log in</h4></a>
-    </div>
-
-    {% endif %}
 
     <nav class="about-barras">
       {% load static %}
@@ -57,7 +51,11 @@
 
   {% else %}
 
-  <p><a href="{% url 'login-c' %}" class="login-link">Log in</a> or <a href="{% url 'register' %}" class="login-link">register</a></p>
+  <div class="extra-links">
+    <a href="{% url 'login-c' %}" class="login-link">Log in</a>
+    <span> or </span> 
+    <a href="{% url 'register' %}" class="login-link">register</a>
+  </div>
 
   {% endif %}
 
@@ -83,7 +81,33 @@
       itemSelector: '.nota-li',
       gutter: 10,
     });
-    console.log("perra")
+
+
+    var nav = document.querySelector('.about-barras')
+    var sec = document.querySelector('section.extra')
+
+    nav.addEventListener('mouseover', ()=>{
+      $("section.extra").toggleClass("initial-pos");
+      $("img.barras").toggleClass("hide");
+    })
+
+    nav.addEventListener('mouseout', ()=>{
+      $("section.extra").toggleClass("initial-pos");
+      $("img.barras").toggleClass("hide");
+    })
+
+    sec.addEventListener('mouseover', (e)=>{
+      e.stopPropagation()
+      console.log('´p')
+      $("section.extra").toggleClass("initial-pos");
+      $("img.barras").toggleClass("hide");
+    }, false)
+
+    sec.addEventListener('mouseout', ()=>{
+      $("section.extra").toggleClass("initial-pos");
+      $("img.barras").toggleClass("hide");
+    })
+    console.log('d')
   }
 </script>
 </html>

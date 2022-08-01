@@ -65,7 +65,17 @@ section.extra {
   top: 45px;
   z-index: 2;
   left: 100vw;
-  transition: 0.5s ease-in;
+}
+section.extra .extra-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+}
+section.extra .extra-links a {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
 }
 section.extra > a {
   display: block;
@@ -79,63 +89,63 @@ section.extra.initial-pos {
 }
 
 li:nth-child(1) {
-  background-color: #7c92aa;
+  background-color: #1d98f2;
 }
 
 li:nth-child(2) {
-  background-color: #58d0f4;
+  background-color: #6d57ad;
 }
 
 li:nth-child(3) {
-  background-color: #b0871b;
+  background-color: #759014;
 }
 
 li:nth-child(4) {
-  background-color: #79fad6;
+  background-color: #cf5234;
 }
 
 li:nth-child(5) {
-  background-color: #97b8d5;
+  background-color: #c2d3aa;
 }
 
 li:nth-child(6) {
-  background-color: #ba4c10;
+  background-color: #338bb4;
 }
 
 li:nth-child(7) {
-  background-color: #947798;
+  background-color: #e1cdd0;
 }
 
 li:nth-child(8) {
-  background-color: #129397;
+  background-color: #d0230b;
 }
 
 li:nth-child(9) {
-  background-color: #918a4f;
+  background-color: #457c68;
 }
 
 li:nth-child(10) {
-  background-color: #8ff08a;
+  background-color: #fb3567;
 }
 
 li:nth-child(11) {
-  background-color: #3e6740;
+  background-color: #a65cdf;
 }
 
 li:nth-child(12) {
-  background-color: #d1629a;
+  background-color: #f699eb;
 }
 
 li:nth-child(13) {
-  background-color: #caa458;
+  background-color: #059edc;
 }
 
 li:nth-child(14) {
-  background-color: #e88091;
+  background-color: #2d1274;
 }
 
 li:nth-child(15) {
-  background-color: #510e4e;
+  background-color: #81bc19;
 }
 
 main {
