@@ -118,63 +118,63 @@ section.extra.initial-pos {
   }
 }
 li:nth-child(1) {
-  background-color: #c538cd;
+  background-color: #554505;
 }
 
 li:nth-child(2) {
-  background-color: #46b994;
+  background-color: #612bd3;
 }
 
 li:nth-child(3) {
-  background-color: #df36f9;
+  background-color: #d8f46f;
 }
 
 li:nth-child(4) {
-  background-color: #795d45;
+  background-color: #8998f7;
 }
 
 li:nth-child(5) {
-  background-color: #71dc04;
+  background-color: #1a8a48;
 }
 
 li:nth-child(6) {
-  background-color: #785b2e;
+  background-color: #9866e7;
 }
 
 li:nth-child(7) {
-  background-color: #9d4a52;
+  background-color: #894460;
 }
 
 li:nth-child(8) {
-  background-color: #cee43c;
+  background-color: #5198d6;
 }
 
 li:nth-child(9) {
-  background-color: #a2e538;
+  background-color: #efb82f;
 }
 
 li:nth-child(10) {
-  background-color: #e5cfb1;
+  background-color: #b79e0e;
 }
 
 li:nth-child(11) {
-  background-color: #f14d3d;
+  background-color: #21d573;
 }
 
 li:nth-child(12) {
-  background-color: #1abde0;
+  background-color: #72e6e7;
 }
 
 li:nth-child(13) {
-  background-color: #8217ff;
+  background-color: #0f039a;
 }
 
 li:nth-child(14) {
-  background-color: #3d78e8;
+  background-color: #83de67;
 }
 
 li:nth-child(15) {
-  background-color: #65a9c1;
+  background-color: #10bf96;
 }
 
 main {
@@ -292,6 +292,14 @@ input.signup-button, input.submit-note-button {
 }
 .nota-section .form-nota-section label {
   display: none;
+}
+
+.inside-footer {
+  max-width: 920px;
+  padding: 1rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=style.css.map */
