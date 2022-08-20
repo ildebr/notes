@@ -272,5 +272,15 @@ label {
   display: flex;
   flex-direction: column;
 }
+@media print {
+  body {
+    background: pink;
+    color: red;
+  }
 
-/*# sourceMappingURL=style8.css.map */
+  header {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=style10.css.map */

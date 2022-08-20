@@ -14,13 +14,16 @@ from django.urls import reverse
 # Create your views here.
 
 def index(request):
-    notas = Nota.objects.all().order_by('-fecha')
+    notas = Nota.objects.filter(privacidad='P').order_by('-fecha')
 
     context = {
         'notas' : notas,
     }
 
     return render(request, 'index.html', context)
+
+def landing(request):
+    return render(request, 'landing.html')
 
 class NotaDetailView(generic.DetailView):
     model = Nota
@@ -45,7 +48,7 @@ class NotaDelete(LoginRequiredMixin,DeleteView):
     success_url = reverse_lazy('index')
 
 def UserNotes(request):
-    notas = Nota.objects.filter(usuario=request.user)
+    notas = Nota.objects.filter(usuario=request.user).order_by('-fecha')
 
     context = {
         'notas':notas,
@@ -100,8 +103,10 @@ def UsuarioNota(request):
                 obj.usuario = None
             else:
                 obj.usuario = request.user"""
+            print(obj.usuario)
             if request.user.is_authenticated:
                 obj.usuario = request.user
+                obj.privacidad = 'X'
             else:
                 obj.usuario = None
             obj.save()

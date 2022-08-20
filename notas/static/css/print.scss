@@ -1,0 +1,27 @@
+@media print {
+    body{
+      background: pink;
+      color: red;
+    }
+  
+    header{
+        display: none;
+    }
+  }
+
+  body{
+    background: pink;
+    color: red;
+  }
+
+  header{
+      display: none;
+  }
+
+  .pagina-logo, .navigation-links, .pt-hide{
+      display: none !important;
+  }
+
+  *{
+      color: black;
+  }

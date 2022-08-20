@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Notes</title>
+	<meta charset="utf-8">
+	{% load static %}
+  	<link rel="stylesheet" href="{% static 'css/landing.css' %}">	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<meta name="description" content="Landing for Notes app">
+  	<meta name="keywords" content="HTML, CSS, JavaScript">
+  	<meta name="author" content="Ildebrando">
+
+	<!--  Essential META Tags -->
+	<meta property="og:title" content="Notes app">
+	<meta property="og:type" content="article" />
+	<meta property="og:image" content="http://euro-travel-example.com/thumbnail.jpg">
+	<meta property="og:url" content="http://euro-travel-example.com/index.htm">
+	<meta name="twitter:card" content="summary_large_image">
+
+	<!--  Non-Essential, But Recommended -->
+	<meta property="og:description" content="The best app to manage notes.">
+	<meta property="og:site_name" content="Notes, Inc.">
+	<meta name="twitter:image:alt" content="Alt text for image">
+
+	<!--  Non-Essential, But Required for Analytics -->
+	<meta property="fb:app_id" content="your_app_id" />
+	<meta name="twitter:site" content="@website-username">
+
+</head>
+<body>
+
+	<header>
+		<div class="header-content">
+			<section class="header-text-section">
+				<h1>The <strong>fastest</strong>, <strong>easiest</strong> way to keep track of your notes.</h1>
+
+				<p>Say goodbye to forgetting things, with notes you will always have a place to find them</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. </p>
+
+				<div class="cta-container">
+					<a class="cta" href="{% url 'index' %}">
+						Try it for free for 14 days
+					</a>
+					<a href="{% url 'index' %}" class="cta-second">Take a quick tour</a>
+				</div>
+			</section>
+
+			<section class="header-image-section">
+				{% load static %}
+				<img src="{% static 'img/notas2.png' %}">
+			</section>
+		</div>
+	</header>
+
+	<section class="brands">
+		<div class="brands-content">
+			<h2>Join leading brands that <strong>grow their business</strong> with Landingi</h2>
+			<div class="brands-img">
+				<img src="">
+			</div>
+		</div>
+	</section>
+
+	<section class="convert-section">
+		<div class="convert-content">
+			<h2>Save faster. <strong>Search faster</strong></h2>
+
+			<p class="para">Storing and accessing your notes doesn't need to be difficult. With Notes it is as easy as one click. Think Canva - but for notes!</p>
+
+			<div class="boxes">
+				<div class="box">
+					{% load static %}
+					<img src="{% static 'img/img-1.png' %}">
+					<h3>Watch your notes</h3>
+					<p>With notes it is extremely easy to watch your notes. You can do it from anywhere, so you won't forget anything.</p>
+					<a href="{% url 'index' %}" class="cta-second">Browse notes</a>
+				</div>
+				<div class="box">
+					{% load static %}
+					<img src="{% static 'img/print.png' %}">
+					<h3>Print</h3>
+					<p>Whenever you want you can print your notes or save them as PDF so you can watch them locally later or share them with your friends and relatives!</p>
+					<a href="{% url 'index' %}" class="cta-second">Browse notes</a>
+				</div>
+				<div class="box">
+					{% load static %}
+					<img src="{% static 'img/screen.png' %}">
+					<h3>Keep them safe</h3>
+					<p>Only you can watch your notes so you don't have to worry anyone else might want to know your secrets, they will always be safe and ready for you.</p>
+					<a href="{% url 'index' %}" class="cta-second">Browse notes</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="looking-section">
+		<div class="looking-content">
+			
+			<div class="quote">
+				<p class="quote-text">"We used to outsource all of our notes because we didn't have a web developer in our team. Now we can make them <strong>independently, easily and quickly"</strong>"</p>
+
+				<div class="byline-container">
+					{% load static %}
+					<img  class="byline-img" src="{% static 'img/anne.jpeg' %}">
+
+					<div class="byline-text-container">
+						<h4 class="byline-name">Anne Hathaway</h4>
+						<p>Actress, entrepeneur, mother</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="extra">
+				<h2>Finally, the notes app <strong>you've been looking for</strong></h2>
+				<p>Get powerful, user firendly tools to quickly create notes, store them, share them. Here's how notes can help you with your business</p>
+
+				<div class="boxes">
+					<div class="box">
+						{% load static %}
+						<img src="{% static 'img/businesswoman.jpg' %}">
+						<h3>Business owners</h3>
+						<p>Lorem Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima aut eveniet corporis. Culpa odit velit, esse quis fugiat soluta ipsa possimus quas. Voluptas at expedita quam cupiditate officia impedit culpa. ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua.</p>
+						<a href="{% url 'index' %}">Browse notes</a>
+					</div>	
+					<div class="box">
+						{% load static %}
+						<img src="{% static 'img/businessman.jpeg' %}">
+						<h3>Marketing experts</h3>
+						<p>Lorem ipsum dolor Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error ipsam voluptatibus assumenda placeat a velit, molestias obcaecati iure illum nisi perspiciatis laboriosam modi iste eveniet, voluptate distinctio saepe, accusantium eaque. sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua.</p>
+						<a href="{% url 'index' %}">Browse notes</a>
+					</div>	
+					<div class="box">
+						{% load static %}
+						<img src="{% static 'img/businesswoman.jpg' %}">
+						<h3>Agencies</h3>
+						<p>Lorem ipsum dolor Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus excepturi necessitatibus possimus. Voluptatibus officiis mollitia explicabo quis dolorem iusto et, in blanditiis assumenda dolorum aspernatur deleniti nihil illo neque debitis. sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua.</p>
+						<a href="{% url 'index' %}">Browse notes</a>
+					</div>	
+				</div>
+
+				<button class="cta">
+					Start a 14-day free trial
+				</button>
+
+				<div class="quote">
+					<p class="quote-text">"We used to outsource all of our notes because we didn't have a web developer in our team. Now we can make them <strong>independently, easily and quickly"</strong>"</p>
+
+					<div class="byline-container">
+						{% load static %}
+						<img  class="byline-img" src="{% static 'img/anne.jpeg' %}">
+
+						<div class="byline-text-container">
+							<h4 class="byline-name">Anne Hathaway</h4>
+							<p>Actress, entrepeneur, mother</p>
+						</div>
+						
+					</div>
+				</div>
+
+				<a class="cta-second">Read more customer success stories</a>
+			</div>
+			
+		</div>
+	</section>
+
+	<section class="start-section">
+		<div class="start-content">
+			<div class="first">
+				<h2><strong>Start</strong> saving your notes</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+
+			<img src="">
+
+			<a href="{% url 'index' %}" class="cta-second">Learn more about notes</a>
+		</div>
+
+		<div class="second">
+			<h2>Integrate your pages with <strong>tools you already use</strong></h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua.</p>
+
+			<div class="boxes">
+				<div class="box">
+					{% load static %}
+					<img src="{% static 'img/businessman.jpeg' %}">
+					<h3>Business owners</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua.</p>
+					<a href="{% url 'index' %}">Browse notes</a>
+				</div>	
+				<div class="box">
+					{% load static %}
+					<img src="{% static 'img/businesswoman.jpg' %}">
+					<h3>Marketing experts</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua.</p>
+					<a href="{% url 'index' %}">Browse notes</a>
+				</div>	
+				<div class="box">
+					{% load static %}
+					<img src="{% static 'img/businessman.jpeg' %}">
+					<h3>Agencies</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua.</p>
+					<a href="{% url 'index' %}">Browse notes</a>
+				</div>	
+			</div>
+
+			<div class="logos">
+				<img src="">
+			</div>
+
+			<a href="{% url 'index' %}" class="cta-second">See all integrations</a>
+
+			<div class="trial">
+				<div class="box">
+					<h3>Start you free trial</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do </p>
+					<a href="{% url 'index' %}" class="cta-second">Try it free</a>
+				</div>
+				<div class="box">
+					<h3>Take a quick tour</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do </p>
+					<a href="{% url 'index' %}" class="cta-second">Get my personal demo</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<div class="footer-inside">
+			<div class="companies">
+				<div class="company">
+					<img src="">
+					<div class="starts">
+						
+					</div>
+				</div>
+			</div>
+
+			<div class="line-breaker"></div>
+
+			<div class="links-container">
+				<div class="links">
+					<h4>Product</h4>
+					<a class="link" href="{% url 'index' %}">Notes</a>
+					<a class="link" href="{% url 'index' %}">Enterprise</a>
+					<a class="link" href="{% url 'index' %}">Notes</a>
+					<a class="link" href="{% url 'index' %}">Notes</a>
+				</div>
+
+				<div class="links">
+					<h4>Product</h4>
+					<a class="link" href="{% url 'index' %}">Notes</a>
+					<a class="link" href="{% url 'index' %}">Enterprise</a>
+					<a class="link" href="{% url 'index' %}">Notes</a>
+					<a class="link" href="{% url 'index' %}">Notes</a>
+				</div>
+
+				<div class="links">
+					<h4>Product</h4>
+					<a class="link" href="{% url 'index' %}">Notes</a>
+					<a class="link" href="{% url 'index' %}">Enterprise</a>
+					<a class="link" href="{% url 'index' %}">Notes</a>
+					<a class="link" href="{% url 'index' %}">Notes</a>
+				</div>
+
+				<div class="links">
+					<h4>Product</h4>
+					<a class="link" href="{% url 'index' %}">Notes</a>
+					<a class="link" href="{% url 'index' %}">Enterprise</a>
+					<a class="link" href="{% url 'index' %}">Notes</a>
+					<a class="link" href="{% url 'index' %}">Notes</a>
+				</div>
+
+				<div class="links">
+					<h4>Product</h4>
+					<a class="link" href="{% url 'index' %}">Notes</a>
+					<a class="link" href="{% url 'index' %}">Enterprise</a>
+					<a class="link" href="{% url 'index' %}">Notes</a>
+					<a class="link" href="{% url 'index' %}">Notes</a>
+				</div>
+
+				<div class="links">
+					<h4>Product</h4>
+					<a class="link" href="{% url 'index' %}">Notes</a>
+					<a class="link" href="{% url 'index' %}">Enterprise</a>
+					<a class="link" href="{% url 'index' %}">Notes</a>
+					<a class="link" href="{% url 'index' %}">Notes</a>
+				</div>
+			</div>
+
+
+		</div>
+
+		<footer class="footer-footer">
+			<div class="footer-inside">
+				<h3>Notes</h3>
+				<p>Copyright notes Inc.</p>
+
+
+				<div class="socials-links">
+					<div class="social">
+						{% load static %}
+						<img src="{% static 'img/facebook.svg' %}" class="social-img">
+					</div>
+					<div class="social">
+						{% load static %}
+						<img src="{% static 'img/facebook.svg' %}" class="social-img">
+					</div>
+					<div class="social">
+						{% load static %}
+						<img src="{% static 'img/facebook.svg' %}" class="social-img">
+					</div>
+					<div class="social">
+						{% load static %}
+						<img src="{% static 'img/facebook.svg' %}" class="social-img">
+					</div>
+					<div class="social">
+						{% load static %}
+						<img src="{% static 'img/facebook.svg' %}" class="social-img">
+					</div>
+					<div class="social">
+						{% load static %}
+						<img src="{% static 'img/facebook.svg' %}" class="social-img">
+					</div>
+					<div class="social">
+						{% load static %}
+						<img src="{% static 'img/facebook.svg' %}" class="social-img">
+					</div>
+				</div>
+
+				<a href="{% url 'index' %}">Terms & Qualifications</a>
+			</div>
+		</footer>
+	</footer>
+
+	<script src="js/main.js"></script>
+</body>
+</html>
+

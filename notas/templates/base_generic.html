@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  {% block title %}<title>Local Library</title>{% endblock %}
+  {% block title %}<title>Notes</title>{% endblock %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Add additional CSS in static file -->
   {% load static %}
-  <link rel="stylesheet" href="{% static 'css/style8.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style12.css' %}">
+  <link rel="stylesheet" media="print" href="{% static 'css/print2.css' %}">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
   {% load static %}
   <script src="{% static 'js/jquery.js' %}"></script>
@@ -16,17 +17,37 @@
 <body>
 
   <header class="pagina-logo">
-    <h1><a href="{% url 'index' %}" class="notas-link">Notas</a></h1>
+    <div class="header-container">
+      <h1><a href="{% url 'index' %}" class="notas-link">Notas</a></h1>
     
     <!--<img src="{% static 'img/barras.svg' %}" alt="" class="barras">-->
 
 
-    <nav class="about-barras">
-      {% load static %}
-			<img src="{% static 'img/barras.svg' %}" alt="barras" class="barras">
-      {% load static %}
-			<img src="{% static 'img/x.svg' %}" alt="Close" class="barras hide">
-		</nav>
+      <nav class="about-barras">
+        {% load static %}
+        <img src="{% static 'img/barras.svg' %}" alt="barras" class="barras">
+        {% load static %}
+        <img src="{% static 'img/x.svg' %}" alt="Close" class="barras hide">
+      </nav>
+
+      <section class="extra">
+        {% if user.is_authenticated %}
+        <a href="{% url 'mis-notas' %}" class="mis-notas-link">Mis notas</a>
+        <a href="{% url 'logout' %}" class="logout-link">Log out</a>
+      
+        {% else %}
+      
+        <div class="extra-links">
+          <a href="{% url 'login-c' %}" class="login-link">Log in</a>
+          <span> or </span> 
+          <a href="{% url 'register' %}" class="login-link">register</a>
+        </div>
+      
+        {% endif %}
+      
+        <p class="personal">Work in progress, made by Ildebrando Quinchoa. All rights reserved, for more of my work visit my <a href="https://ildebr.github.io/portfolio" class="portafolio-link">portfolio.</a></p>
+      </section>
+    </div>
 
   </header>
   <main class="main-container">
@@ -38,23 +59,7 @@
   </div>
 </main>
 
-<section class="extra">
-  {% if user.is_authenticated %}
-  <a href="{% url 'mis-notas' %}" class="mis-notas-link">Mis notas</a>
-  <a href="{% url 'logout' %}" class="logout-link">Log out</a>
 
-  {% else %}
-
-  <div class="extra-links">
-    <a href="{% url 'login-c' %}" class="login-link">Log in</a>
-    <span> or </span> 
-    <a href="{% url 'register' %}" class="login-link">register</a>
-  </div>
-
-  {% endif %}
-
-  <p class="personal">Work in progress, made by Ildebrando Quinchoa. All rights reserved, for more of my work visit my <a href="https://ildebr.github.io/portfolio" class="portafolio-link">portfolio.</a></p>
-</section>
 
 
 
@@ -73,31 +78,30 @@
     });
 
 
-    var nav = document.querySelector('.about-barras')
-    var sec = document.querySelector('section.extra')
+    // var nav = document.querySelector('.about-barras')
+    // var sec = document.querySelector('section.extra')
 
-    nav.addEventListener('mouseover', ()=>{
-      $("section.extra").toggleClass("initial-pos");
-      $("img.barras").toggleClass("hide");
-    })
+    // nav.addEventListener('mouseover', ()=>{
+    //   $("section.extra").toggleClass("initial-pos");
+    //   $("img.barras").toggleClass("hide");
+    // })
 
-    nav.addEventListener('mouseout', ()=>{
-      $("section.extra").toggleClass("initial-pos");
-      $("img.barras").toggleClass("hide");
-    })
+    // nav.addEventListener('mouseout', ()=>{
+    //   $("section.extra").toggleClass("initial-pos");
+    //   $("img.barras").toggleClass("hide");
+    // })
 
-    sec.addEventListener('mouseover', (e)=>{
-      e.stopPropagation()
-      console.log('´p')
-      $("section.extra").toggleClass("initial-pos");
-      $("img.barras").toggleClass("hide");
-    }, false)
+    // sec.addEventListener('mouseover', (e)=>{
+    //   e.stopPropagation()
+    //   console.log('´p')
+    //   $("section.extra").toggleClass("initial-pos");
+    //   $("img.barras").toggleClass("hide");
+    // }, false)
 
-    sec.addEventListener('mouseout', ()=>{
-      $("section.extra").toggleClass("initial-pos");
-      $("img.barras").toggleClass("hide");
-    })
-    console.log('d')
+    // sec.addEventListener('mouseout', ()=>{
+    //   $("section.extra").toggleClass("initial-pos");
+    //   $("img.barras").toggleClass("hide");
+    // })
   }
 </script>
 </html>

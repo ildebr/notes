@@ -8,24 +8,26 @@
         <a href="{% url 'mis-notas' %}" class="atras-link">Mis notas</a>
 
         {% else %}
-        <a href="{% url 'index' %}" class="atras-link">Atras</a>
+        <a href="{% url 'index' %}" class="atras-link">Back</a>
 
         {% endif %}
+        {% load static %}
+        <button class="print" onclick="window.print()"><img src="{% static 'img/printer.svg' %}" alt=""></button>
     </nav>
     <div class="nota-detail-header">
         <h2 class="nota-titulo">{{ nota.titulo }}</h2>
         {% if user.is_authenticate and nota.usuario == user.get_username %}
-        <a href="{% url 'nota-delete' nota.id %}" class="borrar-link">Borrar</a>
+        <a class="pt-hide" href="{% url 'nota-delete' nota.id %}" class="borrar-link">Delete</a>
         {% endif %}
     </div>
 
     {% if user.is_authenticated and nota.usuario != None and nota.usuario != user.get_username %}
-    <h4>Creado por {{ nota.usuario }}</h4>
+    <h4>Note by {{ nota.usuario }}</h4>
 
     {% endif %}
 
     {% if request.user == nota.usuario and user.is_authenticated %}
-    <a href="{% url 'nota-update' nota.pk %}">Editar</a>
+    <a  class="pt-hide"  href="{% url 'nota-update' nota.pk %}">Editar</a>
 
     {% endif %}
     

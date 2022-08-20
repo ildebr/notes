@@ -1,14 +1,12 @@
 *, html {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
 }
 
 *, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  position: relative;
   color: white;
 }
 
@@ -35,17 +33,23 @@ body * {
 
 header.pagina-logo {
   position: sticky;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 45px;
   z-index: 4;
   box-shadow: #111 0px -2px 8px;
   background-color: black;
 }
 header.pagina-logo h1 a {
   font-family: sans-serif;
+  text-decoration: none;
+}
+header.pagina-logo .header-container {
+  max-width: 920px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 45px;
+  position: relative;
 }
 header.pagina-logo nav.about-barras {
   position: absolute;
@@ -58,7 +62,6 @@ header.pagina-logo nav.about-barras {
 }
 header.pagina-logo nav.about-barras img.barras {
   height: 20px;
-  filter: invert(1);
 }
 header.pagina-logo nav.about-barras .hide {
   display: none;
@@ -69,7 +72,7 @@ section.extra {
   width: 100vw;
   max-width: 100%;
   background-color: white;
-  position: fixed;
+  position: absolute;
   padding: 0.5rem 1rem;
   top: 45px;
   z-index: 2;
@@ -130,6 +133,7 @@ main {
   width: 47%;
   margin-bottom: 10px;
   color: black;
+  list-style: none;
 }
 .notas-container .nota-li a {
   text-decoration: none;
@@ -144,6 +148,21 @@ main {
   margin-top: 0.75rem;
   color: #373c3e;
 }
+.notas-container .nota-li:nth-child(1n+0) {
+  background-color: #ffab91;
+}
+.notas-container .nota-li:nth-child(2n+0) {
+  background-color: #ffcc80;
+}
+.notas-container .nota-li:nth-child(3n+0) {
+  background-color: #e7ed9b;
+}
+.notas-container .nota-li:nth-child(4n+0) {
+  background-color: #cf94da;
+}
+.notas-container .nota-li:nth-child(5n+0) {
+  background-color: #81deea;
+}
 
 @media (min-width: 700px) {
   .notas-container .nota-li {
@@ -151,21 +170,6 @@ main {
   }
   .notas-container .nota-li a p {
     font-size: 1.4rem;
-  }
-  .notas-container .nota-li:nth-child(1n+0) {
-    background-color: #ffab91;
-  }
-  .notas-container .nota-li:nth-child(2n+0) {
-    background-color: #ffcc80;
-  }
-  .notas-container .nota-li:nth-child(3n+0) {
-    background-color: #e7ed9b;
-  }
-  .notas-container .nota-li:nth-child(4n+0) {
-    background-color: #cf94da;
-  }
-  .notas-container .nota-li:nth-child(5n+0) {
-    background-color: #81deea;
   }
 }
 div.add-note {
@@ -189,6 +193,20 @@ div.add-note img {
 }
 .nota-detail .nota-texto-container {
   padding: 1rem 0;
+}
+.nota-detail .navigation-links {
+  display: flex;
+  justify-content: space-between;
+}
+.nota-detail .navigation-links button {
+  cursor: pointer;
+  border: none;
+  background: white;
+  border-radius: 20px;
+  padding: 0.2rem;
+}
+.nota-detail .navigation-links button img {
+  width: 20px;
 }
 
 section.extra * {
@@ -249,17 +267,19 @@ input.signup-button, input.submit-note-button {
   display: none;
 }
 
-.form-nota-section form {
+form {
   max-width: 420px;
   margin: 0 auto;
   margin-top: 3rem;
 }
-.form-nota-section .input-field {
+
+.input-field {
   color: black;
   width: 100%;
   padding: 0.5rem;
 }
-.form-nota-section label {
+
+label {
   display: none;
 }
 
@@ -270,5 +290,15 @@ input.signup-button, input.submit-note-button {
   display: flex;
   flex-direction: column;
 }
+@media print {
+  body {
+    background: pink;
+    color: red;
+  }
 
-/*# sourceMappingURL=style7.css.map */
+  header {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=style12.css.map */

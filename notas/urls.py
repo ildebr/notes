@@ -12,4 +12,5 @@ urlpatterns = [
     path('register', views.register, name='register'),
     path('login', v.LoginView.as_view(template_name='auth/login.html', authentication_form=UserLoginForm), name='login-c'),
     path('misnotas', views.UserNotes, name='mis-notas'),
+    path('landing', views.landing, name="landing"),
 ]

@@ -16,6 +16,10 @@ body {
   background-color: #252525;
 }
 
+.no-log {
+  text-align: center;
+}
+
 .main-container {
   max-width: 920px;
   margin: 0 auto;
@@ -47,9 +51,14 @@ header.pagina-logo nav.about-barras {
   position: absolute;
   right: 0.5rem;
   cursor: pointer;
+  height: 100%;
+  padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
 }
 header.pagina-logo nav.about-barras img.barras {
   height: 20px;
+  filter: invert(1);
 }
 header.pagina-logo nav.about-barras .hide {
   display: none;
@@ -64,7 +73,7 @@ section.extra {
   padding: 0.5rem 1rem;
   top: 45px;
   z-index: 2;
-  left: 100vw;
+  right: 100vw;
 }
 section.extra .extra-links {
   display: flex;
@@ -74,8 +83,14 @@ section.extra .extra-links {
   padding: 3rem;
 }
 section.extra .extra-links a {
-  margin-bottom: 1rem;
   font-size: 1.2rem;
+  text-transform: uppercase;
+}
+section.extra .extra-links > * {
+  margin-bottom: 1rem;
+}
+section.extra .extra-links:last-child {
+  margin-bottom: 0;
 }
 section.extra > a {
   display: block;
@@ -85,69 +100,23 @@ section.extra p.personal {
 }
 
 section.extra.initial-pos {
-  left: 0px;
+  right: 0px;
 }
 
-li:nth-child(1) {
-  background-color: #1d98f2;
-}
+@media (min-width: 650px) {
+  section.extra {
+    height: fit-content;
+    width: fit-content;
+    width: 200px;
+  }
+  section.extra p.personal {
+    display: none;
+  }
 
-li:nth-child(2) {
-  background-color: #6d57ad;
+  section.extra.initial-pos {
+    right: 0;
+  }
 }
-
-li:nth-child(3) {
-  background-color: #759014;
-}
-
-li:nth-child(4) {
-  background-color: #cf5234;
-}
-
-li:nth-child(5) {
-  background-color: #c2d3aa;
-}
-
-li:nth-child(6) {
-  background-color: #338bb4;
-}
-
-li:nth-child(7) {
-  background-color: #e1cdd0;
-}
-
-li:nth-child(8) {
-  background-color: #d0230b;
-}
-
-li:nth-child(9) {
-  background-color: #457c68;
-}
-
-li:nth-child(10) {
-  background-color: #fb3567;
-}
-
-li:nth-child(11) {
-  background-color: #a65cdf;
-}
-
-li:nth-child(12) {
-  background-color: #f699eb;
-}
-
-li:nth-child(13) {
-  background-color: #059edc;
-}
-
-li:nth-child(14) {
-  background-color: #2d1274;
-}
-
-li:nth-child(15) {
-  background-color: #81bc19;
-}
-
 main {
   padding: 1rem;
 }
@@ -175,10 +144,25 @@ main {
   margin-top: 0.75rem;
   color: #373c3e;
 }
+.notas-container .nota-li:nth-child(1n+0) {
+  background-color: #ffab91;
+}
+.notas-container .nota-li:nth-child(2n+0) {
+  background-color: #ffcc80;
+}
+.notas-container .nota-li:nth-child(3n+0) {
+  background-color: #e7ed9b;
+}
+.notas-container .nota-li:nth-child(4n+0) {
+  background-color: #cf94da;
+}
+.notas-container .nota-li:nth-child(5n+0) {
+  background-color: #81deea;
+}
 
 @media (min-width: 700px) {
   .notas-container .nota-li {
-    width: 30%;
+    width: 32%;
   }
   .notas-container .nota-li a p {
     font-size: 1.4rem;
@@ -215,11 +199,6 @@ section.extra * {
   display: none;
 }
 
-section.register-section input {
-  color: black;
-  padding: 0.25rem;
-  width: 100%;
-}
 section.register-section .register-header {
   padding-bottom: 1rem;
   border-bottom: 1px solid white;
@@ -240,7 +219,14 @@ section.register-section form p label {
   margin-bottom: 0.25rem;
   position: relative;
 }
-section.register-section form .signup-button {
+
+input {
+  color: black;
+  padding: 0.25rem;
+  width: 100%;
+}
+
+input.signup-button, input.submit-note-button {
   background-color: black;
   border: none;
   color: white;
@@ -249,4 +235,52 @@ section.register-section form .signup-button {
   cursor: pointer;
 }
 
-/*# sourceMappingURL=style4.css.map */
+.nota-section .form-nota-section form {
+  max-width: 420px;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+.nota-section .form-nota-section .input-field {
+  color: black;
+  width: 100%;
+  padding: 0.5rem;
+}
+.nota-section .form-nota-section label {
+  display: none;
+}
+
+form {
+  max-width: 420px;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+
+.input-field {
+  color: black;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+label {
+  display: none;
+}
+
+.inside-footer {
+  max-width: 920px;
+  padding: 1rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+@media print {
+  body {
+    background: pink;
+    color: red;
+  }
+
+  header {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=style11.css.map */

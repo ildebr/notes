@@ -1,0 +1,24 @@
+@media print {
+  body {
+    background: pink;
+    color: red;
+  }
+
+  header {
+    display: none;
+  }
+}
+body {
+  background: pink;
+  color: red;
+}
+
+header {
+  display: none;
+}
+
+* {
+  color: blue;
+}
+
+/*# sourceMappingURL=print.css.map */
