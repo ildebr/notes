@@ -11,7 +11,7 @@
 {% if notas %}
 <ul class="notas-container">
     {% for nota in notas %}
-        <li class="nota-li"><a href="{{ nota.get_absolute_url }}" class="link-nota">{{ nota.titulo }}</a></li>
+        <li class="nota-li"><a href="{{ nota.get_absolute_url }}" class="link-nota"><h2>{{ nota.titulo }}</h2><p>{{ nota.fecha }}</p></a></li>
     {% endfor %}
     </ul>
 

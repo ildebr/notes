@@ -4,7 +4,13 @@
 
 <article class="nota-detail">
     <nav class="navigation-links">
+        {% if user.is_authenticated %}
+        <a href="{% url 'mis-notas' %}" class="atras-link">Mis notas</a>
+
+        {% else %}
         <a href="{% url 'index' %}" class="atras-link">Atras</a>
+
+        {% endif %}
     </nav>
     <div class="nota-detail-header">
         <h2 class="nota-titulo">{{ nota.titulo }}</h2>

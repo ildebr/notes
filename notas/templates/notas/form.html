@@ -4,11 +4,11 @@
 
 
 <section class="nota-section">
-  {% if not request.user.is_anonymous %}
+  <!-- {% if not request.user.is_anonymous %}
 <p>usuario:  {{ request.user }}</p>
 {% else %}
 <p></p>
-{% endif %}
+{% endif %} -->
 <div class="form-nota-section">
   <form action="" method="post">
     {% csrf_token %}

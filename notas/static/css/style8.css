@@ -152,19 +152,19 @@ main {
   .notas-container .nota-li a p {
     font-size: 1.4rem;
   }
-  .notas-container .nota-li li:nth-child(1n+0) {
+  .notas-container .nota-li:nth-child(1n+0) {
     background-color: #ffab91;
   }
-  .notas-container .nota-li li:nth-child(1n+1) {
+  .notas-container .nota-li:nth-child(2n+0) {
     background-color: #ffcc80;
   }
-  .notas-container .nota-li li:nth-child(1n+2) {
+  .notas-container .nota-li:nth-child(3n+0) {
     background-color: #e7ed9b;
   }
-  .notas-container .nota-li li:nth-child(1n+3) {
+  .notas-container .nota-li:nth-child(4n+0) {
     background-color: #cf94da;
   }
-  .notas-container .nota-li li:nth-child(1n+4) {
+  .notas-container .nota-li:nth-child(5n+0) {
     background-color: #81deea;
   }
 }
@@ -249,6 +249,22 @@ input.signup-button, input.submit-note-button {
   display: none;
 }
 
+form {
+  max-width: 420px;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+
+.input-field {
+  color: black;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+label {
+  display: none;
+}
+
 .inside-footer {
   max-width: 920px;
   padding: 1rem;
@@ -257,4 +273,4 @@ input.signup-button, input.submit-note-button {
   flex-direction: column;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style8.css.map */

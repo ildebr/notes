@@ -1,7 +1,13 @@
 {% extends "base_generic.html" %}
 {% block content %}
 
+{% if user.is_authenticated %}
+      <h3>Hola {{ user.get_username }}</h3>
 
+      {% else %}
+      <h4 class="no-log">You're not logged in. <a href="{% url 'login-c' %}" class="login-link">Log in</a> and enjoy the full experience.</h4>
+
+      {% endif %}
 <div class="notas-header">
     <h3>This is a list of public notes published by users. To save and keep private notes log in.</h3>
     <h4><a href="{% url 'create-note' %}" class="crear-link">Write a note</a></h4>

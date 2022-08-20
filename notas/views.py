@@ -36,7 +36,9 @@ class NotaCreate(CreateView):
 
 class NotaUpdate(UpdateView):
     model = Nota
-    fields = ['titulo', 'texto']
+    # fields = ['titulo', 'texto']
+    form_class = NotaUsuarioForm
+    
 
 class NotaDelete(LoginRequiredMixin,DeleteView):
     model = Nota

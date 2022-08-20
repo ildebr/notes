@@ -142,13 +142,13 @@ section.extra.initial-pos{
 
 $count: 15;
 
-@for $i from 1 through $count {
-    li{
-        &:nth-child(#{$i}){
-            background-color: rgb(random(255), random(255), random(255));
-        }
-    }
-}
+// @for $i from 1 through $count {
+//     li{
+//         &:nth-child(#{$i}){
+//             background-color: rgb( 50 + random(155), 50 + random(155), 50 + random(155));
+        
+//     }
+// }
 
 main{
     padding: 1rem;
@@ -186,16 +186,42 @@ main{
     }
 }
 
+$color1: #ffab91;
+$color2: #ffcc80;
+$color3: #e7ed9b;
+$color4: #cf94da;
+$color5: #81deea;
+
 @media(min-width: 700px){
     .notas-container{
         .nota-li{
-            width: 30%;
+            width: 32%;
             a{
                 p{
                     font-size: 1.4rem;
                 }
             }
+
+            
+            &:nth-child(1n+0){
+                background-color: $color1;
+            }
+            &:nth-child(2n+0){
+                background-color: $color2;
+            }
+            &:nth-child(3n+0){
+                background-color: $color3;
+            }
+            &:nth-child(4n+0){
+                background-color: $color4;
+            }
+            &:nth-child(5n+0){
+                background-color: $color5;
+            }
+            
         }
+
+        
     }
 }
 
@@ -302,6 +328,24 @@ input.signup-button, input.submit-note-button{
         }
     }
 }
+
+
+
+    form{
+        
+        max-width: 420px;
+        margin: 0 auto;
+        margin-top: 3rem;
+    }
+    .input-field{
+        color: black;
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    label{
+        display: none;
+    }
 
 
 .inside-footer{
